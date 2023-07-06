@@ -1,4 +1,4 @@
-# <h1 align="center">Capstone Project Guide for Batch RP1 🚀 </h1>
+# <h1 align="center">Capstone Project Guide for Batch RP1 🚀</h1>
 
 ### Authored By: ⚓ Ely Odivilas ⚓
 
