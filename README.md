@@ -1,8 +1,20 @@
-# Capstone Project Guide for Batch RP1 🚀
+# <h1 align="center">Capstone Project Guide for Batch RP1 🚀 </h1>
 
-### Created By: ⚓ Ely Odivilas ⚓
+### Authored By: ⚓ Ely Odivilas ⚓
 
 <br>
+
+# Outline
+
+## Initial Setup
+
+### Frontend / Client-side
+
+### Backend / Server-side
+
+### Database
+
+Contributors: Batch RP1 Learners 🌱
 
 <span style="color:#b3cde0; font-weight:bold; font-size:1.6em;">🤖 Technology Used </span>
 
