@@ -1,0 +1,69 @@
+<!-- localhost:8080/api/v2/employees -->
+
+ <!-- SOAP API -->
+
+<!-- xml format -->
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="https://www.w3.org/2003/05/soap-envelope%22%3E" soap:Header>
+</soap:Header>
+<soap:Body>
+
+
+<employees:GetEmployee>
+    <employees:firstName>JC</employees:firstName> 
+    <employees:firstName>Johnroy</employees:firstName> 
+    <employees:firstName>Wayne</employees:firstName> 
+</employees:GetEmployee>
+
+</soap:Body>
+</soap:Envelope>
+
+<!-- Server -->
+
+<!-- REST API -->
+
+<!-- json format -->
+
+<!-- {
+    {
+        name: JC
+    },
+    {
+        name: Johnroy
+    },
+    {
+        name: Wayne
+    },
+} -->
+
+
+{
+    "user_id":2,
+    "username":"ely",
+    "email":"ely@gmail.com",
+    "password":"$2a$10$8Wa9J4M4V5SBR7k8N0y/uO9FxikGMDYlksZgNwu71QxXrean7Z2Ni",
+    "first_name":"Ely",
+    "middle_name":"Guitar",
+    "last_name":"Buendia",
+    "gender":"M",
+    "age":22,
+    "mobile_number":"0958254254",
+    "role_id":1,
+    "created_at":"2023-06-10T10:51:38.480Z",
+    "updated_at":"2023-06-10T10:51:38.480Z",
+    "archieved_at":null,
+    "deleted_at":null
+}
+
+Browser
+
+select firstname from employees;
+
+<!-- postgresql -->
+
+employees
+id firstname  lastname
+1  JC         Tan
+2  Johnroy    John
+3  Wayne      Scoth
