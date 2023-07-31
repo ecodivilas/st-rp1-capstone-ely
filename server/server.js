@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 // Note: Comments must be avoided and for teaching purpose only
 
 // Create | Make User
-app.post("/user", async(req, res) => {
+app.post("/users", async(req, res) => {
     try {
         const { user_name, password, user_type } = req.body;
         const createUser = await pool.query("INSERT INTO users (user_name, password, user_type) VALUES($1, $2, $3) RETURNING *", 
@@ -38,7 +38,7 @@ app.post("/user", async(req, res) => {
 // Read | Get All Users
 app.get("/users", async(req, res) => {
     try {
-        const users = await pool.query("SELECT * FROM users");
+        const users = await pool.query("SELECT * FROM users ORDER BY user_id ASC");
         res.json(users.rows);
     
     } catch (err) {
