@@ -5,10 +5,10 @@ import { editUser } from '../services/UserService'
 const editFormParams = [
     {
         id: 1,
-        label: 'User Name',
-        type: 'text',
-        placeholder: 'User Name',
-        name: 'user_name',
+        label: 'Email',
+        type: 'email',
+        placeholder: 'Email',
+        name: 'email',
         defaultValue: '',
     },
     {
@@ -21,20 +21,48 @@ const editFormParams = [
     },
     {
         id: 3,
-        label: 'User Type',
+        label: 'First Name',
         type: 'text',
-        placeholder: 'User Type',
-        name: 'user_type',
+        placeholder: 'First Name',
+        name: 'first_name',
         defaultValue: '',
-    }
+    },
+    {
+        id: 4,
+        label: 'Last Name',
+        type: 'text',
+        placeholder: 'Last Name',
+        name: 'last_name',
+        defaultValue: '',
+    },
+    {
+        id: 5,
+        label: 'Mobile Number',
+        type: 'text',
+        placeholder: 'Mobile Number',
+        name: 'mobile_number',
+        defaultValue: '',
+    },
+    {
+        id: 6,
+        label: 'Birthdate',
+        type: 'date',
+        placeholder: 'Birthdate',
+        name: 'birthdate',
+        defaultValue: '',
+    },
 ]
 
 const EditUser = ({ user }) => {
     const [showModal, setShowModal] = useState(false)
     const [userData, setUserData] = useState({
-        user_name: user['user_name'] ?? '',
+        email: user['email'] ?? '',
         password: user['password'] ?? '',
-        user_type: user['user_type'] ?? ''})
+        first_name: user['first_name'] ?? '',
+        last_name: user['last_name'] ?? '',
+        mobile_number: user['mobile_number'] ?? '',
+        birthdate: user['birthdate'] ?? '',
+    })
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -46,6 +74,8 @@ const EditUser = ({ user }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         userData.user_id = user['user_id']
+        userData.type_id = 1
+        // console.log(userData)
         editUser(userData)
             .then(() => {
                 toggleModal()
@@ -63,7 +93,7 @@ const EditUser = ({ user }) => {
         <div>
             <span className="!hover:text-red-600">
                 <button
-                    className="m-0 p-0 hover:text-green-600"
+                    className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     onClick={toggleModal}
                 >
                     Edit

@@ -25,6 +25,21 @@ const UserTable = () => {
         })
     }
 
+    const formatDate = (inputDate) => {
+        const parsedDate = new Date(inputDate)
+        let day = parsedDate.getDate()
+        let month = parsedDate.getMonth() + 1 // January is 0
+        let year = parsedDate.getFullYear()
+        if (day < 10) {
+            day = '0' + day
+        }
+        if (month < 10) {
+            month = '0' + month
+        }
+        let formatted_date = year + '-' + month + '-' + day
+        return formatted_date
+    }
+
   return (
     <>
         <div className="relative overflow-x-auto w-full flex justify-center">
@@ -35,13 +50,19 @@ const UserTable = () => {
                             User ID
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            User Name
+                            User Email
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Password
+                            First Name
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            User Type
+                            Last Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Mobile Number
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Birthdate
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Actions
@@ -56,17 +77,23 @@ const UserTable = () => {
                                         {user.user_id}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {user.user_name}
+                                        {user.email}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {user.password}
+                                        {user.first_name}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {user.user_type}
+                                        {user.last_name}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {user.mobile_number}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {formatDate(user.birthdate)}
                                     </td>
                                     <td className="px-6 py-4 flex gap-4 items-center h-full">
                                         <EditUser user={user} />
-                                        <button className="hover:text-red-600" onClick={() => handleDelete(user.user_id)}>Delete</button>
+                                        <button className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" onClick={() => handleDelete(user.user_id)}>Delete</button>
                                     </td>
                                 </tr>
                         )
